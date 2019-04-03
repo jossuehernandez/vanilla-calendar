@@ -6,6 +6,7 @@ var vanillaCalendar = {
   activeDates: null,
   date: new Date(),
   todaysDate: new Date(),
+  datePicked: new Date(),
 
   init: function (options) {
     this.options = options
@@ -63,7 +64,7 @@ var vanillaCalendar = {
   },
 
   dateClicked: function () {
-    var _this = this
+    var _this = this    
     this.activeDates = document.querySelectorAll(
       '[data-calendar-status="active"]'
     )
@@ -72,7 +73,7 @@ var vanillaCalendar = {
         var picked = document.querySelectorAll(
           '[data-calendar-label="picked"]'
         )[0]
-        picked.innerHTML = this.dataset.calendarDate
+        picked.innerHTML = _this.datePicked = this.dataset.calendarDate        
         _this.removeActiveClass()
         this.classList.add('vcal-date--selected')
       })
