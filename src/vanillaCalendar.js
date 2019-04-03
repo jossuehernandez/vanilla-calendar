@@ -64,7 +64,7 @@ var vanillaCalendar = {
   },
 
   dateClicked: function () {
-    var _this = this    
+    var _this = this
     this.activeDates = document.querySelectorAll(
       '[data-calendar-status="active"]'
     )
